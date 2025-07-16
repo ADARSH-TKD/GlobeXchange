@@ -1,2 +1,2 @@
-# GlobeXchange
-A Streamlit web app for converting any currency using real-time data from the Frankfurter API. It displays historical exchange trends with interactive graphs and uses Machine Learning to predict future currency rates. Ideal for forex tracking, analysis, and financial forecasting.
+<h1>GlobeXchange</h1> 
+<img src=https://github.com/ADARSH-TKD/GlobeXchange/blob/main/Screenshot%202025-07-17%20015849.png width="100%" height="300px">
