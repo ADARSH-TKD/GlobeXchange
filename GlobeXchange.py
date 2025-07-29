@@ -44,7 +44,7 @@ def currency_graph_data( fc ="INR", base="USD"):
         'price': price_list
     })
 
-def currency_graph_drawing():
+def currency_graph_drawing(fc, base):
     # Create the plotly chart
     fig = go.Figure()
 
@@ -59,7 +59,7 @@ def currency_graph_drawing():
     ))
 
     fig.update_layout(
-        title="USD to INR Exchange Rate Over Time",
+        title=f"{"fc"} to {"base"} Exchange Rate Over Time",
         xaxis_title="Date",
         yaxis_title="Exchange Rate (INR)",
         template="plotly_dark",
