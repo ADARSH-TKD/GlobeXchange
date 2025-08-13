@@ -23,6 +23,7 @@ def currency_finder(amount, fc="INR", base="USD"):
         return False
 
 def currency_graph_data(fc="INR", base="USD"):
+    
     start_date = datetime(2025, 1, 1)
     end_date = date.today()
     dates = pd.date_range(start_date, end_date, freq='D')
@@ -136,15 +137,15 @@ def main():
     with col3:
         target_currency = st.selectbox("To Currency:", currencies, index=currencies.index("INR"))
 
-    if st.button("Convert & Show Graph", type="primary"):
+    if st.button("Convert", type="primary"):
         with st.spinner("Converting currency..."):
             success = currency_finder(amount, target_currency, base_currency)
         
-        if success:
-            with st.spinner("Fetching historical data..."):
-                df = currency_graph_data(target_currency, base_currency)
-                if df is not None:
-                    currency_graph_drawing(df, target_currency, base_currency)
+    if st.button("Show Graph", type = "primary") :
+        with st.spinner("Fetching historical data..."):
+            df = currency_graph_data(target_currency, base_currency)
+            if df is not None:
+                currency_graph_drawing(df, target_currency, base_currency)
 
     st.markdown("---")
     st.markdown("**Note:** Historical data is fetched from Frankfurter API and current rates from ExchangeRate-API.")
